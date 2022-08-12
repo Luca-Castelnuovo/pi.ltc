@@ -1,3 +1,3 @@
 <?php
 
-echo 'Hello Wolrd';
+php_info();
