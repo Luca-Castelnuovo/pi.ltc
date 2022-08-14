@@ -7,6 +7,9 @@ require '../includes/auth.php';
 require '../includes/mail.php';
 require '../includes/door.php';
 
+define('GPIO_PIN', 18);
+define('SECONDS_OPEN', 5);
+
 try {
     $data = check_auth(token: $_SERVER["HTTP_AUTHORIZATION"] ?? $_GET['authorization']);
 } catch (\Throwable $th) {
@@ -22,7 +25,7 @@ try {
 }
 
 try {
-    open_door(gpio_pin: 18, seconds_open: 5);
+    open_door(gpio_pin: GPIO_PIN, seconds_open: SECONDS_OPEN);
 } catch (\Throwable $th) {
     echo 'Door could not be opened' . PHP_EOL;
     exit;
