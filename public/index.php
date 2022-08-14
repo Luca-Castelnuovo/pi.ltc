@@ -2,27 +2,30 @@
 
 require '../vendor/autoload.php';
 
-use PiPHP\GPIO\GPIO;
-use PiPHP\GPIO\Pin\PinInterface;
+require '../includes/env.php';
+require '../includes/auth.php';
+require '../includes/mail.php';
+require '../includes/door.php';
 
-// TODO: paseto tokens
+try {
+    $data = check_auth(token: $_SERVER["HTTP_AUTHORIZATION"] ?? $_GET['authorization']);
+} catch (\Throwable $th) {
+    echo 'Authentication failed' . PHP_EOL;
+    exit;
+}
 
-// TODO: email
+try {
+    send_mail(name: $data->name);
+} catch (\Throwable $th) {
+    echo 'Email could not be sent' . PHP_EOL;
+    exit;
+}
 
-// TODO: validate authorization header
-// maybe with JWT?
+try {
+    open_door(gpio_pin: 18, seconds_open: 5);
+} catch (\Throwable $th) {
+    echo 'Door could not be opened' . PHP_EOL;
+    exit;
+}
 
-$gpio = new GPIO();
-
-// Retrieve pin 18 and configure it as an output pin
-$pin = $gpio->getOutputPin(18);
-
-// Turn it on
-$pin->setValue(PinInterface::VALUE_HIGH);
-
-sleep(5);
-
-// Turn it off
-$pin->setValue(PinInterface::VALUE_LOW);
-
-echo 'done';
+echo 'ok' . PHP_EOL;
