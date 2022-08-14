@@ -13,6 +13,7 @@ define('SECONDS_OPEN', 5);
 try {
     $data = check_auth(token: $_SERVER["HTTP_AUTHORIZATION"] ?? $_GET['authorization']);
 } catch (\Throwable $th) {
+    http_response_code(401);
     echo 'Authentication failed' . PHP_EOL;
     exit;
 }
@@ -20,6 +21,7 @@ try {
 try {
     send_mail(name: $data->name);
 } catch (\Throwable $th) {
+    http_response_code(500);
     echo 'Email could not be sent' . PHP_EOL;
     exit;
 }
@@ -27,6 +29,7 @@ try {
 try {
     open_door(gpio_pin: GPIO_PIN, seconds_open: SECONDS_OPEN);
 } catch (\Throwable $th) {
+    http_response_code(500);
     echo 'Door could not be opened' . PHP_EOL;
     exit;
 }
