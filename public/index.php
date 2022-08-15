@@ -17,7 +17,7 @@ try {
 }
 
 try {
-    send_mail($data->name);
+    send_mail($data->sub);
 } catch (\Throwable $th) {
     respond('Email could not be sent', 500);
 }

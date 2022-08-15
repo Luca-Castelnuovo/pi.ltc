@@ -27,8 +27,6 @@ Deur geopend door:
 Name: $name
 Time: $time
 Date: $date
-
-User agent: {$_SERVER['HTTP_USER_AGENT']}
 MAIL;
 
     $mail->send();
