@@ -3,7 +3,7 @@
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-function check_auth(?string $token)
+function check_auth($token)
 {
     return JWT::decode(
         $token,

@@ -2,7 +2,7 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-function send_mail(string $name)
+function send_mail($name)
 {
     $mail = new PHPMailer(true);
 

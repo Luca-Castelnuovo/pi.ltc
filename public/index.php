@@ -11,19 +11,19 @@ define('GPIO_PIN', 18);
 define('SECONDS_OPEN', 5);
 
 try {
-    $data = check_auth(token: $_SERVER["HTTP_AUTHORIZATION"] ?? $_GET['authorization']);
+    $data = check_auth($_SERVER["HTTP_AUTHORIZATION"] ?? $_GET['authorization']);
 } catch (\Throwable $th) {
     respond('Authentication failed', 401);
 }
 
 try {
-    send_mail(name: $data->name);
+    send_mail($data->name);
 } catch (\Throwable $th) {
     respond('Email could not be sent', 500);
 }
 
 try {
-    open_door(gpio_pin: GPIO_PIN, seconds_open: SECONDS_OPEN);
+    open_door(GPIO_PIN, SECONDS_OPEN);
 } catch (\Throwable $th) {
     respond('Door could not be opened', 500);
 }

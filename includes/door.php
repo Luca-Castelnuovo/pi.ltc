@@ -3,7 +3,7 @@
 use PiPHP\GPIO\GPIO;
 use PiPHP\GPIO\Pin\PinInterface;
 
-function open_door(int $gpio_pin, int $seconds_open)
+function open_door($gpio_pin, $seconds_open)
 {
     $gpio = new GPIO();
     $pin = $gpio->getOutputPin($gpio_pin);
