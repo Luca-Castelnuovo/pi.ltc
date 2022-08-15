@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9ac09be7f1f9b619b1ec3dc80e0a106",
+    "content-hash": "477193e72afb78e83492dd840daae5ce",
     "packages": [
         {
             "name": "cubequence/crypto",
