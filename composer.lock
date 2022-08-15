@@ -4,26 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da79bcc5460030cec8c260910db58046",
+    "content-hash": "477193e72afb78e83492dd840daae5ce",
     "packages": [
         {
             "name": "cubequence/crypto",
-            "version": "v1.4",
+            "version": "v1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CubeQuence/crypto.git",
-                "reference": "6a7d39774a024980974562d93a06dfa5700fe78c"
+                "reference": "2a0822ee06abb0edfd4faf38e2319eda6b6fdf66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CubeQuence/crypto/zipball/6a7d39774a024980974562d93a06dfa5700fe78c",
-                "reference": "6a7d39774a024980974562d93a06dfa5700fe78c",
+                "url": "https://api.github.com/repos/CubeQuence/crypto/zipball/2a0822ee06abb0edfd4faf38e2319eda6b6fdf66",
+                "reference": "2a0822ee06abb0edfd4faf38e2319eda6b6fdf66",
                 "shasum": ""
             },
             "require": {
                 "paragonie/halite": "^4.8",
-                "paragonie/paseto": "^2.1",
-                "php": ">=8.0.0"
+                "paragonie/paseto": "^2.4"
             },
             "require-dev": {
                 "nunomaduro/phpinsights": "dev-master",
@@ -54,7 +53,7 @@
                 "issues": "https://github.com/CubeQuence/crypto/issues",
                 "source": "https://github.com/CubeQuence/crypto"
             },
-            "time": "2021-11-04T15:04:05+00:00"
+            "time": "2022-08-15T22:06:31+00:00"
         },
         {
             "name": "defuse/php-encryption",
