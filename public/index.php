@@ -8,7 +8,7 @@ require '../includes/mail.php';
 require '../includes/door.php';
 
 define('GPIO_PIN', 18);
-define('SECONDS_OPEN', 5);
+define('SECONDS_OPEN', 3);
 
 try {
     $data = check_auth($_SERVER["HTTP_AUTHORIZATION"] ?? $_GET['authorization']);
