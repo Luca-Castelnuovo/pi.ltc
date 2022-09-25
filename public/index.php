@@ -17,15 +17,15 @@ try {
 }
 
 try {
-    send_mail($data->sub);
-} catch (\Throwable $th) {
-    respond('Email could not be sent', 500);
-}
-
-try {
     open_door(GPIO_PIN, SECONDS_OPEN);
 } catch (\Throwable $th) {
     respond('Door could not be opened', 500);
+}
+
+try {
+    send_mail($data->sub);
+} catch (\Throwable $th) {
+    respond('Email could not be sent', 500);
 }
 
 respond('ok');
